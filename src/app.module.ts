@@ -8,7 +8,7 @@ import { AppService } from './app.service';
   imports: [
     //env config
     ConfigModule.forRoot({
-      envFilePath: 'config/.development.env',
+      envFilePath: 'config/dot-envs/.development.env',
       isGlobal: true
     })
   ],
