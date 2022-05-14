@@ -1,0 +1,1 @@
+# Black project without any package installed
