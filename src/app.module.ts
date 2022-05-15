@@ -17,7 +17,7 @@ import { CatModule } from './api/cat/cat.module';
     }),
     //type orm
     TypeOrmModule.forRoot({
-      type: 'mysql',
+      type: 'postgres',
       host: process.env.DB_HOST,
       port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USERNAME,

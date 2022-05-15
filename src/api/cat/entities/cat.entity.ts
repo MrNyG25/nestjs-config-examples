@@ -8,11 +8,14 @@ export class Cat {
     @Column({type: 'varchar', length: 255})
     breed!: string;
 
-    @Column({type: 'text'})
+    @Column({type: 'text', nullable: true})
     description?: string;
 
     @Column({type: 'simple-array'})
     tags!: string[];
+
+    @Column({ type: 'varchar', length: 100 })
+    category!: string;
 
     @Column({type: 'boolean'})
     status!: boolean;

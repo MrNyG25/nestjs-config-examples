@@ -19,3 +19,14 @@ npm i class-transformer
 npm install --save @nestjs/typeorm typeorm mysql2
 npm install --save @nestjs/typeorm typeorm pg
 ```
+
+### for validations
+
+```
+npm i class-validator class-transformer
+```
+
+### swagger
+```
+npm i swagger-ui-express @nestjs/swagger
+```
