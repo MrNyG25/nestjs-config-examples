@@ -12,3 +12,10 @@ npm i --save @nestjs/config
 ```
 npm i class-transformer
 ```
+
+### to work with MySql, pg
+
+```
+npm install --save @nestjs/typeorm typeorm mysql2
+npm install --save @nestjs/typeorm typeorm pg
+```
