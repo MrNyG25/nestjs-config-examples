@@ -7,12 +7,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatModule } from './api/cat/cat.module';
+import { environments } from 'config/dot-envs/environments';
 
 @Module({
   imports: [
     //env config
     ConfigModule.forRoot({
-      envFilePath: 'config/dot-envs/.development.env',
+      envFilePath: environments[process.env.NODE_ENV] || `${environments.path}.env`,
       isGlobal: true
     }),
     //type orm

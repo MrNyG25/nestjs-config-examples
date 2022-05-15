@@ -1,0 +1,4 @@
+*
+!.gitignore
+!enviroments.ts
+!.env.example
