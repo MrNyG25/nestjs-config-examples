@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 //type orm
 import { TypeOrmModule } from '@nestjs/typeorm';
+import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -14,7 +15,15 @@ import { environments } from 'config/dot-envs/environments';
     //env config
     ConfigModule.forRoot({
       envFilePath: environments[process.env.NODE_ENV] || `${environments.path}.env`,
-      isGlobal: true
+      isGlobal: true,
+      validationSchema: Joi.object({
+        DB_CONNECTION: Joi.string().required(),
+        DB_HOST: Joi.string().required(),
+        DB_PORT: Joi.number().required(),
+        DB_DATABASE: Joi.string().required(),
+        DB_USERNAME: Joi.string().required(),
+        DB_PASSWORD: Joi.string().required(),
+     }),
     }),
     //type orm
     TypeOrmModule.forRoot({
