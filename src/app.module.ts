@@ -14,7 +14,8 @@ import { environments } from 'config/dot-envs/environments';
   imports: [
     //env config
     ConfigModule.forRoot({
-      envFilePath: environments[process.env.NODE_ENV] || `${environments.path}.env`,
+      envFilePath:
+        environments[process.env.NODE_ENV] || `${environments.path}.env`,
       isGlobal: true,
       validationSchema: Joi.object({
         PORT: Joi.number().required(),
@@ -24,7 +25,7 @@ import { environments } from 'config/dot-envs/environments';
         DB_DATABASE: Joi.string().required(),
         DB_USERNAME: Joi.string().required(),
         DB_PASSWORD: Joi.string().required(),
-     }),
+      }),
     }),
     //type orm
     TypeOrmModule.forRoot({
@@ -34,7 +35,7 @@ import { environments } from 'config/dot-envs/environments';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [__dirname + './**/**/*entity{.ts,.js}'],//"dist/**/*.entity{.ts,.js}" or __dirname + './**/**/*entity{.ts,.js}'
+      entities: [__dirname + './**/**/*entity{.ts,.js}'], //"dist/**/*.entity{.ts,.js}" or __dirname + './**/**/*entity{.ts,.js}'
       autoLoadEntities: true,
       synchronize: true,
     }),

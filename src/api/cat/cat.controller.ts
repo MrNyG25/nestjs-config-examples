@@ -1,7 +1,15 @@
-import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CatService } from './cat.service';
-import {UpdateCatDto } from './dto';
+import { UpdateCatDto } from './dto';
 import { CreateCatDto } from './dto/create-cat.dto';
 
 @ApiTags('cats')
@@ -15,12 +23,12 @@ export class CatController {
   }
 
   @Get()
-  @ApiOperation({summary: 'Cats list'})
+  @ApiOperation({ summary: 'Cats list' })
   async findAll() {
     const data = await this.catService.findAll();
     return {
-      data
-    }
+      data,
+    };
   }
 
   @Get(':id')

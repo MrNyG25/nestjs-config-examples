@@ -1,5 +1,5 @@
 export enum CatCategory {
-    'TECHNOLOGY',
-    'LIFESTYLE',
-    'CODING',
-  }
+  'TECHNOLOGY',
+  'LIFESTYLE',
+  'CODING',
+}

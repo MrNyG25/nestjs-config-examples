@@ -6,12 +6,12 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   //validation for models DTOs
   app.useGlobalPipes(
     new ValidationPipe({
       /*to delete not desired properties from dtos (sended by the client)*/
-      whitelist: true, 
+      whitelist: true,
       forbidNonWhitelisted: true, //example : property username should not exist
     }),
   );
