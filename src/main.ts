@@ -19,7 +19,10 @@ async function bootstrap() {
   //swagger
   initSwagger(app);
 
-  await app.listen(3000);
+  //cors
+  app.enableCors();
+
+  await app.listen(process.env.PORT || 3000);
 
   //log host and port
   const logger = new Logger();
