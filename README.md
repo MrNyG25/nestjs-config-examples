@@ -2,31 +2,46 @@
 
 # Installed packages
 
-### to config env
+## to config env
 
 ```
 npm i --save @nestjs/config
 ```
 
-### to use ValidationPipe and validate DTOs too
+### validate .env properties
+
+```
+npm i joi
+```
+
+## to use ValidationPipe and validate DTOs too
+
 ```
 npm i class-transformer
 ```
 
-### to work with MySql, pg
+## to work with MySql, pg
 
 ```
 npm install --save @nestjs/typeorm typeorm mysql2
 npm install --save @nestjs/typeorm typeorm pg
 ```
 
-### for validations
+## for validations
 
 ```
 npm i class-validator class-transformer
 ```
 
-### swagger
+## swagger
+
 ```
 npm i swagger-ui-express @nestjs/swagger
 ```
+
+# Summary
+
+- Swagger working
+- Model dto properties validation
+- .envs full
+- Joi validation
