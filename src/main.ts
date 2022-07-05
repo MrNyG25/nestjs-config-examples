@@ -2,7 +2,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { initSwagger } from './app.swagger';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -22,7 +21,7 @@ async function bootstrap() {
   //cors
   app.enableCors();
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.APP_PORT || 3000);
 
   //log host and port
   const logger = new Logger();

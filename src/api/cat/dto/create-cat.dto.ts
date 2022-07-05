@@ -21,14 +21,16 @@ export class CreateCatDto {
 
   @ApiProperty({
     description: 'Description',
-    example: '...',
+    example: 'I am a cat',
     nullable: true,
   })
   @IsOptional()
   @IsString()
   description?: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: ['red', 'gray'],
+  })
   @IsNotEmpty()
   @IsArray()
   @IsString({ each: true })
@@ -36,7 +38,7 @@ export class CreateCatDto {
 
   @ApiProperty({
     description: `Category valid values ${EnumToString(CatCategory)}`,
-    example: '...',
+    example: `${EnumToString(CatCategory)[0]}`,
   })
   @IsNotEmpty()
   @IsEnum(CatCategory, {

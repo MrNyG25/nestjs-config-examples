@@ -15,10 +15,10 @@ import { environments } from 'config/dot-envs/environments';
     //env config
     ConfigModule.forRoot({
       envFilePath:
-        environments[process.env.NODE_ENV] || `${environments.path}.env`,
+        environments[process.env.NODE_ENV] || `${environments.path}.dev.env`,
       isGlobal: true,
       validationSchema: Joi.object({
-        PORT: Joi.number().required(),
+        APP_PORT: Joi.number().required(),
         DB_CONNECTION: Joi.string().required(),
         DB_HOST: Joi.string().required(),
         DB_PORT: Joi.number().required(),
