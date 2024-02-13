@@ -9,6 +9,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatModule } from './api/cat/cat.module';
 //import { environments } from 'config/dot-envs/environments';
+import { UserModule } from './api/user/user.module';
 
 @Module({
   imports: [
@@ -38,8 +39,10 @@ import { CatModule } from './api/cat/cat.module';
       entities: [__dirname + './**/**/*entity{.ts,.js}'], //"dist/**/*.entity{.ts,.js}" or __dirname + './**/**/*entity{.ts,.js}'
       autoLoadEntities: true,
       synchronize: true,
+      logging: true,
     }),
     CatModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

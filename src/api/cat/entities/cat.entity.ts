@@ -1,7 +1,9 @@
+import { User } from 'src/api/user/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -25,6 +27,9 @@ export class Cat {
 
   @Column({ type: 'boolean' })
   status!: boolean;
+
+  @ManyToOne(() => User, (user) => user.cats)
+  user!: User;
 
   //timestamps
   @CreateDateColumn()
