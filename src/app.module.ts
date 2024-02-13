@@ -15,7 +15,7 @@ import { CatModule } from './api/cat/cat.module';
     //env config
     ConfigModule.forRoot({
       envFilePath: 'config/dot-envs/.env',
-        //environments[process.env.NODE_ENV] || `${environments.path}.dev.env`,
+      //environments[process.env.NODE_ENV] || `${environments.path}.dev.env`,
       isGlobal: true,
       validationSchema: Joi.object({
         APP_PORT: Joi.number().required(),
